@@ -1,5 +1,3 @@
-
-
 def gen_test():
     x = 1
     yield x + 1
@@ -27,4 +25,21 @@ print(next(g2))
 print(next(g2))
 print(g2.send(2))
 print(g2.close())
-print(g2.send(1))  # StopIteration
+# print(g2.send(1))  # StopIteration
+
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def file_manager(file):
+    try:
+        f = open(file, "w")
+        yield f
+    finally:
+        f.close()
+
+
+with file_manager("test.py") as r:
+    r.write("111")
+
