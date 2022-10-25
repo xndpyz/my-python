@@ -40,7 +40,17 @@ def file_manager(file):
         f.close()
 
 
-# with file_manager("test.py") as r:
-#     r.write("111")
+with file_manager("test.py") as r:
+    r.write("111")
+
+
+import click
+@click.command()
+@click.option('--count', default=3)
+@click.option('--name', prompt='输入你的名字：')
+def hello(count, name):
+    for x in range(count):
+        print(f"Hello {name}!")
+
 
 
