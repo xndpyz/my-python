@@ -6,6 +6,8 @@ pandas 的使用总结
 
 pd.TimeStamp() 可以将时间戳转成日期
 pd.sort_values(col) 根据哪一列来排序
+pd.to_numpy() 二维数组
+pd.iloc[]    选取指定的值
 """
 
 import pandas as pd
@@ -26,9 +28,6 @@ df2 = pd.DataFrame({
     "C": [11, 2, 3, 4]
 })
 
-print(df2.sort_values("C"))
-print(df2.to_numpy())
+print(df2)
+print(df2.iloc[3, 2])
 
-a, b, c = 0, 1, 1
-# for i in range(3, 10):
-#     a, b, c = b, c, a + b + c

@@ -8,6 +8,7 @@ n = 2  ()(), (())
 
 def generateParenthesis(n):
     res = []
+
     def backstack(s, r, l):
         if r > n or l > r:
             return
@@ -16,6 +17,7 @@ def generateParenthesis(n):
             return
         backstack(s + "(", r + 1, l)
         backstack(s + ")", r, l + 1)
+
     backstack("", 0, 0)
     return res
 
