@@ -40,8 +40,8 @@ def file_manager(file):
         f.close()
 
 
-with file_manager("test.py") as r:
-    r.write("111")
+# with file_manager("test.py") as r:
+#     r.write("111")
 
 
 import click

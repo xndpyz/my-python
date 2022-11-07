@@ -21,7 +21,11 @@
 2. 进程拥有自己的资源空间，一个进程包含若干个线程，线程与CPU资源分配无关，多个线程共享同一进程内的资源。
 3. 线程的调度与切换比进程快很多。
 
-cpython 的间隔性检查，线程会计算其执行的字节码数量，如果达到阈值，则会释放
+
+GIL 锁：同一时刻，只能有一个线程在一个CPU上执行字节码
+线程释放资源：
+* cpython 的间隔性检查，线程会计算其执行的字节码数量，如果达到阈值，则会释放 dis.dis(func) 反编译， sys.getcheckinterval(50)
+* IO 操作
 ```commandline
 import sys
 sys.getcheckinterval(50)  设置阈值
