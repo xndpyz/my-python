@@ -13,6 +13,10 @@ concurrent 线程池
 
 获取状态
 
+join()
+start()
+
+feture 未来对象,任务容器
 """
 
 
